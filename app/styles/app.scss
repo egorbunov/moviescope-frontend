@@ -1,0 +1,133 @@
+@import "bootstrap";
+@import "bootstrap/theme";
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Chewy');
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+
+$brand: 'Patua One', regular;
+$plain: 'Open Sans', sans-serif;
+
+// common stuff 
+
+html, body {
+	box-sizing: border-box;
+	height: 100%;
+}
+
+html {
+	background: url(../images/back-1.jpg) no-repeat center center fixed;
+	// background: url(../images/back-1.jpg) no-repeat center center fixed;
+	// background: url(../images/movie-theater-dark.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	background-color: transparent;
+	div.ember-view {
+		height: 100%;
+	}
+}
+
+$light_blue: #70BAFF;
+$darker_blue: #2979C4;
+
+// ============ Navigation bar on search result page =================
+.navbar-inverse {
+    background: #000000;
+    background-color: #E8E8E8;
+    font-family: $plain;
+    font-size: 18px;
+    padding: 0 18px;
+    border-radius: 0;
+    border-width: 0px 0px 1px 0px;
+    border-color: $darker_blue;
+
+    .navbar-brand {
+    	font-family: $brand;
+    	font-size: 35px;
+    	color: #000;
+		text-shadow: 2px 2px 0 $light_blue;
+		// padding-top: 18px;
+	}
+	.navbar-input-group {
+		$input_height: 2em;
+		$input_width: 30em;
+		$rad: 10px;
+		@media (min-width: $screen-sm) {
+			padding: 0 2em;
+		    font-family: $plain;
+		    font-size: 18px;
+		    input {
+		    	font-size: inherit;
+		    	width: $input_width;
+		    	height: $input_height;
+		    	border-radius: $rad 0px 0px $rad;
+		    }
+		    .btn {
+		    	background: 0;
+		    	background-color: $darker_blue;
+		    	position: relative;
+		    	font-size: inherit;
+		    	float: right;
+		    	height: $input_height;
+		    	border-radius: 0px $rad $rad 0px; 
+		    	right: 0em;
+		    	border: 0px;
+		    }
+		}
+		@media (max-width: $screen-xs-max) {
+			margin-top:0px;
+			margin-bottom:0px;
+			.btn {
+				width:100%;
+			}
+		}
+	}
+}
+
+// ============= Main page ================
+
+.search-input-raw {
+	background-color: rgba(255,255,255,0.05);
+	border-radius: 10px;
+	padding: 40px;
+	margin-top: 7em;
+	margin-bottom: 7em;
+
+	.app-logo {
+		font-family: $brand;
+    	font-size: 3.7em;
+    	color: #000;
+		text-shadow: 2px 2px 0 $light_blue;
+		padding-bottom: 0.7em;
+	}
+
+	$main-font-size: 15px;
+	$rad: 10px;
+	$input_height: 2.6em;
+
+	.input-group {
+		font-family: $plain;
+		font-size: $main-font-size;
+
+	    input {
+	    	font-size: inherit;
+	    	// border
+	    	color: #000;
+	    	height: $input_height;
+	    	border-width: 1px;
+	    	border-radius: $rad $rad $rad $rad;
+	    }
+	    .btn {
+	    	font-size: $main-font-size;
+	    	height: $input_height;
+	    	background: 0;
+	    	background-color: $darker_blue;
+	    	border-radius: 0px $rad $rad 0px; 
+	    }
+	}
+}
