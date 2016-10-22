@@ -1,1 +1,54 @@
-{{outlet}}
+{{#if isSearchSubmitted}}
+{{!-- Page with results listed, search field is at the top  --}}
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+			data-toggle="collapse" data-target="#menu-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		{{ link-to App.appLabel 'index' class="navbar-brand" }}
+	</div>
+	<div class="collapse navbar-collapse" id="menu-collapse">
+		<form class="navbar-form navbar-left navbar-input-group" role="search">
+			<div class="form-group">
+	        	{{input enter="submit" type="text" class="form-control" placeholder="Movie description to search" value=searchQuery}}
+			</div>
+			<button {{action "submit"}} type="submit" class="btn btn-primary">Search</button>
+		</form>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">About</a></li>
+		</ul>
+	</div>
+	</nav>
+	{{outlet}}
+{{else}}
+{{!-- Main page, opened if no query submitted (like Google!) --}}
+<div class="container">
+	<div class="raw">
+		<div class="col-lg-8 col-lg-offset-2 search-input-raw">
+			<div class="text-center app-logo">
+				<label>{{ App.appLabel }}</label>
+			</div>
+	        <div class="input-group">
+	        	{{input enter="submit" type="text" class="form-control" placeholder="Movie description to search" value=searchQuery}}
+	            <span class="input-group-btn">
+		        	<button {{action "submit"}} class="btn btn-secondary" type="button">Search</button>
+		        </span>
+	        </div>
+	    </div>
+
+	</div>
+</div>
+{{/if}}
+
+<div class="container">
+	{{!-- Error in case of bad query --}}
+	{{#bs-modal size="sm" open=showQueryErrorAlert title="Error"}}
+		{{ queryErrorMessage }}
+	{{/bs-modal}}
+</div>
+
+

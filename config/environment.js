@@ -12,13 +12,17 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-
     APP: {
+      appLabel: 'MovieScope'
       // Here you can pass flags/options to your application instance
       // when it is created
     }
   };
 
+  if (environment === 'production') {
+    ENV.locationType = 'hash'
+  }
+  
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

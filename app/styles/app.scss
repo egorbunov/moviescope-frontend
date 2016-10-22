@@ -37,20 +37,25 @@ $darker_blue: #2979C4;
 
 // ============ Navigation bar on search result page =================
 .navbar-inverse {
-    background: #000000;
-    background-color: #E8E8E8;
-    font-family: $plain;
-    font-size: 18px;
-    padding: 0 18px;
-    border-radius: 0;
-    border-width: 0px 0px 1px 0px;
-    border-color: $darker_blue;
+	background: #000000;
+	background-color: #E8E8E8;
+	font-family: $plain;
+	font-size: 18px;
+	padding: 0 18px;
+	border-radius: 0;
+	border-width: 0px 0px 1px 0px;
+	border-color: $darker_blue;
 
-    .navbar-brand {
-    	font-family: $brand;
-    	font-size: 35px;
-    	color: #000;
-		text-shadow: 2px 2px 0 $light_blue;
+	.navbar-brand {
+		font-family: $brand;
+		font-size: 35px;
+		color: #000;
+		text-shadow:
+	       3px 3px 0 $light_blue,
+	     -1px -1px 0 $light_blue,
+	      1px -1px 0 $light_blue,
+	      -1px 1px 0 $light_blue,
+	       1px 1px 0 $light_blue;
 		// padding-top: 18px;
 	}
 	.navbar-input-group {
@@ -59,25 +64,25 @@ $darker_blue: #2979C4;
 		$rad: 10px;
 		@media (min-width: $screen-sm) {
 			padding: 0 2em;
-		    font-family: $plain;
-		    font-size: 18px;
-		    input {
-		    	font-size: inherit;
-		    	width: $input_width;
-		    	height: $input_height;
-		    	border-radius: $rad 0px 0px $rad;
-		    }
-		    .btn {
-		    	background: 0;
-		    	background-color: $darker_blue;
-		    	position: relative;
-		    	font-size: inherit;
-		    	float: right;
-		    	height: $input_height;
-		    	border-radius: 0px $rad $rad 0px; 
-		    	right: 0em;
-		    	border: 0px;
-		    }
+			font-family: $plain;
+			font-size: 18px;
+			input {
+				font-size: inherit;
+				width: $input_width;
+				height: $input_height;
+				border-radius: $rad 0px 0px $rad;
+			}
+			.btn {
+				background: 0;
+				background-color: $darker_blue;
+				position: relative;
+				font-size: inherit;
+				float: right;
+				height: $input_height;
+				border-radius: 0px $rad $rad 0px; 
+				right: 0em;
+				border: 0px;
+			}
 		}
 		@media (max-width: $screen-xs-max) {
 			margin-top:0px;
@@ -100,9 +105,15 @@ $darker_blue: #2979C4;
 
 	.app-logo {
 		font-family: $brand;
-    	font-size: 3.7em;
-    	color: #000;
-		text-shadow: 2px 2px 0 $light_blue;
+		font-size: 3.7em;
+		color: #000;
+		// text-shadow: 2px 2px 0 $light_blue;
+	   text-shadow:
+	       3px 3px 0 $light_blue,
+	     -1px -1px 0 $light_blue,
+	      1px -1px 0 $light_blue,
+	      -1px 1px 0 $light_blue,
+	       1px 1px 0 $light_blue;
 		padding-bottom: 0.7em;
 	}
 
@@ -114,8 +125,8 @@ $darker_blue: #2979C4;
 		font-family: $plain;
 		font-size: $main-font-size;
 
-	    input {
-	    	font-size: inherit;
+		input {
+			font-size: inherit;
 	    	// border
 	    	color: #000;
 	    	height: $input_height;
@@ -130,4 +141,19 @@ $darker_blue: #2979C4;
 	    	border-radius: 0px $rad $rad 0px; 
 	    }
 	}
+
+	.alert {
+		font-family: $plain;
+		padding: 0.6em 0.7em 0.5em 0.5em;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: $rad;
+		width: 40%;
+		margin-top: 1em;
+	}
+}
+
+// =========== query error modal ===============
+.modal-dialog {
+	font-family: $plain;
 }
