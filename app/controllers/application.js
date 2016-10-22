@@ -9,14 +9,24 @@ export default Ember.Controller.extend({
 	showQueryErrorAlert: false,
 	queryErrorMessage: '',
 	actions: {
-		submit() {
+		initState() {
+			this.set('searchQuery', '');
+			this.set('isSearchSubmitted', false);
 			this.set('showQueryErrorAlert', false);
-			// validating input query
-			if (this.get('searchQuery').length < 4) {
-				this.set('queryErrorMessage', 'Query is too small!');
-				this.set('showQueryErrorAlert', true);
-				return;
-			}
+		},
+
+		setQueryError(message) {
+			this.set('queryErrorMessage', message);
+			this.set('showQueryErrorAlert', true);
+		},
+
+		// use from other components if query string, for example, submitted throug query param
+		querySubmit(query) {
+			this.set('searchQuery', query);
+			this.set('isSearchSubmitted', true);
+		},
+
+		doSearch() {
 			// changing flag, which means that we are about to show search results, so new 
 			// search page view must be shown
 			this.set('isSearchSubmitted', true);

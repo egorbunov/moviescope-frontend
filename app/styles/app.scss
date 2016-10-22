@@ -45,6 +45,8 @@ $darker_blue: #2979C4;
 	border-radius: 0;
 	border-width: 0px 0px 1px 0px;
 	border-color: $darker_blue;
+	position: fixed;
+	width: 100%;
 
 	.navbar-brand {
 		font-family: $brand;
@@ -90,6 +92,15 @@ $darker_blue: #2979C4;
 			.btn {
 				width:100%;
 			}
+		}
+	}
+	.dropdown-menu {
+		padding-left: 30px;
+		padding-right: 30px;
+		border-radius: 10px;
+
+		.year-group {
+			padding-bottom: 20px;
 		}
 	}
 }
@@ -157,3 +168,117 @@ $darker_blue: #2979C4;
 .modal-dialog {
 	font-family: $plain;
 }
+
+// ==========
+
+// =========== search result ============
+.search-result-container {
+	padding-top: 5em;
+}
+
+// .movie-card {
+// 	font-family: $plain;
+// 	// padding: 0;
+
+// 	.well {
+// 		padding-top: 1em;
+// 		padding-bottom: 1em;
+// 		background: #000000;
+// 		background-color: rgba(232, 232, 232, 0.85);
+// 		border-color: 0;
+// 		border-width: 0;
+// 	}
+
+// 	img {
+// 		height: 160px;
+// 	}
+// }
+
+
+// dsadasdddddddddddddddddddddddddddddddddddddddsdjslakdjklasjdklajdals
+
+.panel {
+    position: relative;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: none;
+} 
+
+
+.panel-footer {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    color: #fff;
+    padding: 10px 15px;
+    background-color: #f3f5f6;
+    border-top: 1px solid #ddd;
+}
+
+.panel-default  {
+    border-color: #e4e9eb;
+
+	.panel-footer {
+	    color: #768399;
+	    background-color: #e4e9eb;
+	    border-top: none;
+	}
+
+	.panel-body {
+		padding: 15px;
+	    border-top: none;
+	}
+}
+
+.white-content {
+    color: #768399;
+    background: #fff;
+    background-color: #fff;
+}
+
+.movie-card-panel { 
+	font-family: $plain;
+	background-color: rgba(255, 255, 255, 0.7);
+
+	.movie-more-info {
+	    padding: 0;
+	    margin: 0;
+	    list-style: none;
+	}
+
+	.movie-tumbs-up {
+		margin-top: 10px;
+		margin-left: 30px;
+
+		a {
+		    font-size: 24px;
+		    // padding-bottom: 0px;
+		    margin-top: 10px;
+		    color: #79859b;
+		}
+	}
+
+	.title {
+	    margin-top: 10px;
+	    font-size: 22px;
+	    font-weight: 600;
+	    margin-bottom: 10px;
+	}
+
+
+	.movie-poster {
+	    padding: 3px;
+	    border: 1px solid #e7e7e2;
+	    float: left;
+	    border-top-left-radius: 4px;
+	    border-top-right-radius: 4px;
+    	img {
+			height: 160px;
+		}
+	}
+}
+
+
+

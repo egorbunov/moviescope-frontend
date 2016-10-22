@@ -1,1 +1,3 @@
-<h1>Found a lot!</h1>
+{{#each model as |movieUnit|}}
+  {{movie-card movie=movieUnit}}
+{{/each}}

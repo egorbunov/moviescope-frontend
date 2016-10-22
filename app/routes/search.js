@@ -1,22 +1,40 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+	// query parameters (specified within the link)
 	queryParams: {
 		searchQuery: {
 			refreshModel: true
 		}
 	},
+
+	isValidated: false,
+
 	model(params) {
 		var appController = this.controllerFor('application');
-
+		if (typeof params.searchQuery == 'undefined') {
+			params.searchQuery = ''
+		}
 		if (!appController.get('isSearchSubmitted')) {
 			// path was probably opened by hardcoding link with searchQuery parameter
-			appController.set('searchQuery', params.searchQuery);
-			appController.send('submit')
-			return []
+			appController.send('querySubmit', params.searchQuery);
 		}
+		if (params.searchQuery.length < 4) {
+			appController.send('setQueryError', 'Too short query =(');
+			this.set('isValidated', false);
+			return [];
+		}
+		this.set('isValidated', true);
+
 
 		// processing normal scenario
-		return ["Film 1", "Film 2", "Film 3"];
+		var data = this.get('store').query('movie', params);
+		return data;
+	},
+
+	afterModel: function(model, transition) {
+		if (!this.get('isValidated')) {
+			this.transitionTo('');
+		}
 	}
 });
