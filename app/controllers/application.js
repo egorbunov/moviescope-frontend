@@ -7,12 +7,18 @@ export default Ember.Controller.extend({
 	searchQuery: '',
 	isSearchSubmitted: false,
 	showQueryErrorAlert: false,
-	queryErrorMessage: '',
+	queryErrorMessage: 'error',
 	actions: {
-		initState() {
-			this.set('searchQuery', '');
+		closeQueryErrorAlert() {
+			this.transitionToRoute('');
+			this.send('resetQuery');
+		},
+
+		resetQuery() {
 			this.set('isSearchSubmitted', false);
 			this.set('showQueryErrorAlert', false);
+			this.set('queryErrorMessage', '');
+			this.set('searchQuery', '');
 		},
 
 		setQueryError(message) {

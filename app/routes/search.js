@@ -12,8 +12,8 @@ export default Ember.Route.extend({
 
 	model(params) {
 		var appController = this.controllerFor('application');
-		if (typeof params.searchQuery == 'undefined') {
-			params.searchQuery = ''
+		if (typeof params.searchQuery === 'undefined') {
+			params.searchQuery = '';
 		}
 		if (!appController.get('isSearchSubmitted')) {
 			// path was probably opened by hardcoding link with searchQuery parameter
@@ -26,15 +26,8 @@ export default Ember.Route.extend({
 		}
 		this.set('isValidated', true);
 
-
 		// processing normal scenario
 		var data = this.get('store').query('movie', params);
 		return data;
 	},
-
-	afterModel: function(model, transition) {
-		if (!this.get('isValidated')) {
-			this.transitionTo('');
-		}
-	}
 });

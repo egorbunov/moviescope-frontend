@@ -3,24 +3,135 @@
 	{
 		"selected_items":
 		[
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"bo",
+				"border-width"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"search",
+				"searchQuery"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"sear",
+				"searchQuery"
+			],
+			[
+				"app",
+				"appLabel\t(app.js)"
+			],
+			[
+				"M",
+				"MovieScope\t(environment.js)"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"borco",
+				"border-color"
+			],
+			[
+				"bar_",
+				"bar_border_rad"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"baccol",
+				"background-color"
+			],
+			[
+				"bor",
+				"border-color"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/app.js",
+			"file": "app/templates/application.hbs",
 			"settings":
 			{
-				"buffer_size": 615,
+				"buffer_size": 2889,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/environment.js",
+			"file": "app/styles/app.scss",
 			"settings":
 			{
-				"buffer_size": 1053,
+				"buffer_size": 5353,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "import Ember from 'ember';\n\nexport default Ember.Controller.extend({\n\tApp: Ember.computed(function() {\n\t\treturn Ember.getOwner(this).application;\n\t}),\n\tsearchQuery: '',\n\tisSearchSubmitted: false,\n\tshowQueryErrorAlert: false,\n\tqueryErrorMessage: '',\n\tactions: {\n\t\tsetQueryError(message) {\n\t\t\tthis.set('queryErrorMessage', message);\n\t\t\tthis.set('showQueryErrorAlert', true);\n\t\t},\n\n\t\t// use from other components if query string, for example, submitted throug query param\n\t\tquerySubmit(query) {\n\t\t\tthis.set('searchQuery', query);\n\t\t\tthis.set('isSearchSubmitted', true);\n\t\t},\n\n\t\tdoSearch() {\n\t\t\t// changing flag, which means that we are about to show search results, so new \n\t\t\t// search page view must be shown\n\t\t\tthis.set('isSearchSubmitted', true);\n\t\t\tthis.transitionToRoute('search', { queryParams: { searchQuery: this.get('searchQuery') }});\n\t\t}\n\t}\n});\n",
+			"file": "app/controllers/application.js",
+			"file_size": 992,
+			"file_write_time": 131216498926202143,
+			"settings":
+			{
+				"buffer_size": 854,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/templates/components/movie-card.hbs",
+			"settings":
+			{
+				"buffer_size": 1327,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes/search.js",
+			"settings":
+			{
+				"buffer_size": 952,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/adapters/movie.js",
+			"settings":
+			{
+				"buffer_size": 3378,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes/index.js",
+			"settings":
+			{
+				"buffer_size": 284,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -33,10 +144,34 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 101.0,
-		"last_filter": "ember ",
+		"height": 305.0,
+		"last_filter": "pick",
 		"selected_items":
 		[
+			[
+				"pick",
+				"Color Picker"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"co",
+				"Color Picker"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"ember ",
 				"Build With: ember build"
@@ -52,13 +187,9 @@
 			[
 				"in",
 				"Package Control: Install Package"
-			],
-			[
-				"instal",
-				"Package Control: Install Package"
 			]
 		],
-		"width": 435.0
+		"width": 493.0
 	},
 	"console":
 	{
@@ -81,19 +212,52 @@
 	[
 		"/home/eg/dev/moviescope",
 		"/home/eg/dev/moviescope/app",
-		"/home/eg/dev/moviescope/config"
+		"/home/eg/dev/moviescope/app/adapters",
+		"/home/eg/dev/moviescope/app/controllers",
+		"/home/eg/dev/moviescope/app/models",
+		"/home/eg/dev/moviescope/app/routes",
+		"/home/eg/dev/moviescope/app/styles",
+		"/home/eg/dev/moviescope/app/templates",
+		"/home/eg/dev/moviescope/app/templates/components"
 	],
 	"file_history":
 	[
-		"/home/eg/dev/moviescope/moviescope-front.sublime-project",
+		"/home/eg/dev/moviescope/app/templates/components/movie-card.hbs",
+		"/home/eg/dev/moviescope/app/adapters/movie.js",
 		"/home/eg/dev/moviescope/app/templates/application.hbs",
-		"/home/eg/dev/moviescope/app/styles/app.css",
+		"/home/eg/dev/moviescope/app/templates/search.hbs",
+		"/home/eg/dev/moviescope/app/components/.gitkeep",
+		"/home/eg/dev/moviescope/app/styles/app.scss",
+		"/home/eg/dev/moviescope/app/controllers/application.js",
+		"/home/eg/dev/moviescope/app/routes/search.js",
+		"/home/eg/dev/moviescope/app/routes/index.js",
+		"/home/eg/dev/moviescope/app/models/movie.js",
+		"/home/eg/dev/moviescope/package.json",
+		"/home/eg/dev/moviescope/bower.json",
+		"/home/eg/dev/moviescope/app/templates/components/error-modal.hbs",
+		"/home/eg/dev/moviescope/app/components/error-modal.js",
+		"/home/eg/dev/moviescope/app/router.js",
+		"/home/eg/dev/moviescope/ember-cli-build.js",
+		"/home/eg/dev/moviescope/app/templates/components/query-validate-error.hbs",
+		"/home/eg/dev/moviescope/app/controllers/index.js",
+		"/home/eg/dev/moviescope/app/controllers/search-result.js",
+		"/home/eg/dev/moviescope/app/controllers/search.js",
+		"/home/eg/dev/moviescope/app/routes/search-result.js",
+		"/home/eg/dev/moviescope/app/app.js",
+		"/home/eg/dev/moviescope/config/environment.js",
+		"/home/eg/dev/moviescope/app/templates/search-result.hbs",
+		"/home/eg/dev/moviescope/app/initializers/application.js",
+		"/home/eg/dev/moviescope/app/instance-initializers/application.js",
+		"/home/eg/dev/moviescope/dist/index.html",
 		"/home/eg/dev/moviescope/app/index.html",
+		"/home/eg/dev/moviescope/dist/assets/moviescope.css",
+		"/home/eg/dev/moviescope/moviescope-front.sublime-project",
+		"/home/eg/dev/moviescope/app/styles/app.css",
 		"/home/eg/dev/sandbox/ember/first-app/app/templates/application.hbs"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -107,6 +271,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"profile-stats-info",
+			"$darker_blue",
+			"#000",
+			"showMyModal",
+			"input_size"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -124,24 +293,198 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/app.js",
+					"file": "app/templates/application.hbs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 615,
+						"buffer_size": 2889,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								340,
-								340
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/grammars/Handlebars.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/styles/app.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5353,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4933,
+								4933
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4620.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/application.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 854,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								260,
+								260
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/templates/components/movie-card.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								618,
+								618
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/grammars/Handlebars.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/routes/search.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 952,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								817,
+								817
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/adapters/movie.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								720,
+								720
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 378.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/routes/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								138,
+								138
 							]
 						],
 						"settings":
@@ -152,37 +495,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "config/environment.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1053,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								352,
-								352
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -190,11 +503,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 29.0
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -231,7 +544,7 @@
 	"project": "moviescope-front.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -240,6 +553,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"applic",
+				"app/templates/application.hbs"
+			],
+			[
+				"application",
+				"app/initializers/application.js"
+			]
 		],
 		"width": 0.0
 	},
@@ -269,7 +590,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 409.0,
+	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

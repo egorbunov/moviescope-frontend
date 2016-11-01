@@ -79,7 +79,7 @@
 
 <div class="container">
 	{{!-- Error in case of bad query --}}
-	{{#bs-modal size="sm" open=showQueryErrorAlert title="Error"}}
+	{{#bs-modal size="sm" open=showQueryErrorAlert title="Error" closeAction=(action "closeQueryErrorAlert")}}
 		{{ queryErrorMessage }}
 	{{/bs-modal}}
 </div>
