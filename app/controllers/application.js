@@ -11,10 +11,10 @@ export default Ember.Controller.extend({
 	actions: {
 		closeQueryErrorAlert() {
 			this.transitionToRoute('');
-			this.send('resetQuery');
+			this.send('resetMainPage');
 		},
 
-		resetQuery() {
+		resetMainPage() {
 			this.set('isSearchSubmitted', false);
 			this.set('showQueryErrorAlert', false);
 			this.set('queryErrorMessage', '');
