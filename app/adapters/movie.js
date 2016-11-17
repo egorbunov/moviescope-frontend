@@ -1,7 +1,8 @@
 import JSONAPIAdapter from 'ember-data/adapters/json-api';
 
 export default JSONAPIAdapter.extend({
-	host: 'http://localhost:5242',
+	host: 'http://23.251.136.39:5242',
+
 	urlForQuery(query, modelName) {
 		return this.get('host').concat("/s");
 	}
