@@ -36,7 +36,7 @@ export default Ember.Controller.extend({
 			// changing flag, which means that we are about to show search results, so new 
 			// search page view must be shown
 			this.set('isSearchSubmitted', true);
-			this.transitionToRoute('search', { queryParams: { searchQuery: this.get('searchQuery') }});
+			this.transitionToRoute('search', { queryParams: { q: this.get('searchQuery') }});
 		}
 	}
 });

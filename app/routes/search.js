@@ -3,7 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	// query parameters (specified within the link)
 	queryParams: {
-		searchQuery: {
+		// search query string
+		q: {
 			refreshModel: true
 		}
 	},
@@ -11,16 +12,16 @@ export default Ember.Route.extend({
 	isValidated: false,
 
 	model(params) {
-		var appController = this.controllerFor('application');
-		if (typeof params.searchQuery === 'undefined') {
-			params.searchQuery = '';
+		var vanya = this.controllerFor('application');
+		if (typeof params.q === 'undefined') {
+			params.q = '';
 		}
-		if (!appController.get('isSearchSubmitted')) {
-			// path was probably opened by hardcoding link with searchQuery parameter
-			appController.send('querySubmit', params.searchQuery);
+		if (!vanya.get('isSearchSubmitted')) {
+			// path was probably opened by hardcoding link with q parameter
+			vanya.send('querySubmit', params.q);
 		}
-		if (params.searchQuery.length < 4) {
-			appController.send('setQueryError', 'Too short query =(');
+		if (params.q.length < 4) {
+			vanya.send('setQueryError', 'Too short query =(');
 			this.set('isValidated', false);
 			return [];
 		}

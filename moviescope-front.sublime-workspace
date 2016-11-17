@@ -72,48 +72,10 @@
 	"buffers":
 	[
 		{
-			"file": "app/templates/application.hbs",
-			"settings":
-			{
-				"buffer_size": 2889,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/styles/app.scss",
-			"settings":
-			{
-				"buffer_size": 5353,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "import Ember from 'ember';\n\nexport default Ember.Controller.extend({\n\tApp: Ember.computed(function() {\n\t\treturn Ember.getOwner(this).application;\n\t}),\n\tsearchQuery: '',\n\tisSearchSubmitted: false,\n\tshowQueryErrorAlert: false,\n\tqueryErrorMessage: '',\n\tactions: {\n\t\tsetQueryError(message) {\n\t\t\tthis.set('queryErrorMessage', message);\n\t\t\tthis.set('showQueryErrorAlert', true);\n\t\t},\n\n\t\t// use from other components if query string, for example, submitted throug query param\n\t\tquerySubmit(query) {\n\t\t\tthis.set('searchQuery', query);\n\t\t\tthis.set('isSearchSubmitted', true);\n\t\t},\n\n\t\tdoSearch() {\n\t\t\t// changing flag, which means that we are about to show search results, so new \n\t\t\t// search page view must be shown\n\t\t\tthis.set('isSearchSubmitted', true);\n\t\t\tthis.transitionToRoute('search', { queryParams: { searchQuery: this.get('searchQuery') }});\n\t\t}\n\t}\n});\n",
-			"file": "app/controllers/application.js",
-			"file_size": 992,
-			"file_write_time": 131216498926202143,
-			"settings":
-			{
-				"buffer_size": 854,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/templates/components/movie-card.hbs",
-			"settings":
-			{
-				"buffer_size": 1327,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/routes/search.js",
 			"settings":
 			{
-				"buffer_size": 952,
+				"buffer_size": 810,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -122,16 +84,16 @@
 			"file": "app/adapters/movie.js",
 			"settings":
 			{
-				"buffer_size": 3378,
+				"buffer_size": 2269,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/routes/index.js",
+			"file": "app/models/movie.js",
 			"settings":
 			{
-				"buffer_size": 284,
+				"buffer_size": 268,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -144,10 +106,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 305.0,
-		"last_filter": "pick",
+		"height": 227.0,
+		"last_filter": "box",
 		"selected_items":
 		[
+			[
+				"box",
+				"Boxy Theme: Activation"
+			],
 			[
 				"pick",
 				"Color Picker"
@@ -189,7 +155,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 493.0
+		"width": 503.0
 	},
 	"console":
 	{
@@ -222,26 +188,27 @@
 	],
 	"file_history":
 	[
-		"/home/eg/dev/moviescope/app/templates/components/movie-card.hbs",
+		"/home/eg/dev/moviescope/app/routes/application.js",
+		"/home/eg/dev/moviescope/app/models/movie.js",
+		"/home/eg/dev/moviescope/app/controllers/search.js",
 		"/home/eg/dev/moviescope/app/adapters/movie.js",
+		"/home/eg/dev/moviescope/app/routes/search.js",
 		"/home/eg/dev/moviescope/app/templates/application.hbs",
 		"/home/eg/dev/moviescope/app/templates/search.hbs",
-		"/home/eg/dev/moviescope/app/components/.gitkeep",
-		"/home/eg/dev/moviescope/app/styles/app.scss",
 		"/home/eg/dev/moviescope/app/controllers/application.js",
-		"/home/eg/dev/moviescope/app/routes/search.js",
-		"/home/eg/dev/moviescope/app/routes/index.js",
-		"/home/eg/dev/moviescope/app/models/movie.js",
+		"/home/eg/dev/moviescope/app/templates/components/movie-card.hbs",
 		"/home/eg/dev/moviescope/package.json",
+		"/home/eg/dev/moviescope/app/styles/app.scss",
+		"/home/eg/dev/moviescope/ember-cli-build.js",
+		"/home/eg/dev/moviescope/app/routes/index.js",
 		"/home/eg/dev/moviescope/bower.json",
+		"/home/eg/dev/moviescope/app/components/.gitkeep",
 		"/home/eg/dev/moviescope/app/templates/components/error-modal.hbs",
 		"/home/eg/dev/moviescope/app/components/error-modal.js",
 		"/home/eg/dev/moviescope/app/router.js",
-		"/home/eg/dev/moviescope/ember-cli-build.js",
 		"/home/eg/dev/moviescope/app/templates/components/query-validate-error.hbs",
 		"/home/eg/dev/moviescope/app/controllers/index.js",
 		"/home/eg/dev/moviescope/app/controllers/search-result.js",
-		"/home/eg/dev/moviescope/app/controllers/search.js",
 		"/home/eg/dev/moviescope/app/routes/search-result.js",
 		"/home/eg/dev/moviescope/app/app.js",
 		"/home/eg/dev/moviescope/config/environment.js",
@@ -257,13 +224,14 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 45.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 123.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -271,6 +239,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"appController",
+			"isSearchSubmitted",
 			"profile-stats-info",
 			"$darker_blue",
 			"#000",
@@ -293,209 +263,360 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/templates/application.hbs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2889,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								25,
-								25
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Handlebars/grammars/Handlebars.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/styles/app.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5353,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4933,
-								4933
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4620.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/controllers/application.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 854,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								260,
-								260
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/templates/components/movie-card.hbs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1327,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								618,
-								618
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Handlebars/grammars/Handlebars.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "app/routes/search.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 952,
+						"buffer_size": 810,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								817,
-								817
+								167,
+								167
 							]
 						],
 						"settings":
 						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										170,
+										171
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										144,
+										145
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 138.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 1,
 					"file": "app/adapters/movie.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3378,
+						"buffer_size": 2269,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								720,
-								720
+								136,
+								136
 							]
 						],
 						"settings":
 						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										137,
+										138
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										97,
+										98
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 378.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "app/routes/index.js",
+					"buffer": 2,
+					"file": "app/models/movie.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 284,
+						"buffer_size": 268,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								138,
-								138
+								23,
+								23
 							]
 						],
 						"settings":
 						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										26,
+										27
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										15,
+										16
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
