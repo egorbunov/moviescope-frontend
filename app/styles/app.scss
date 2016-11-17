@@ -47,6 +47,7 @@ $darker_blue: #2979C4;
 	border-color: $darker_blue;
 	position: fixed;
 	width: 100%;
+	min-width:300px;
 
 	.navbar-brand {
 		font-family: $brand;

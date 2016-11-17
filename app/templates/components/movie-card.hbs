@@ -5,7 +5,7 @@
 				<div class="panel-body">
 					<div class="col-lg-2 col-md-2 col-sm-12">
 						<div class="movie-poster">
-							<img class="img-responsive" src="{{movie.poster}}">
+							<img class="img-responsive" src="{{movie.notNullPoster}}">
 						</div>
 					</div>
 					<div class="col-lg-8 col-md-8 col-sm-12">
@@ -13,18 +13,18 @@
 							{{movie.title}}
 						</div>
 						<div class="plot">
-							<p>{{movie.plot}}</p>
+							<p>{{movie.cuttedPlot}}</p>
 						</div>
 						<div class="year">
-							<p><label>Year: </label> {{movie.year}}</p>
+							<p><label>Year: </label> {{movie.notNullDate}}</p>
 						</div>
 						<div class="imdb">
-							<p><label>IMDB: </label><a href="url"> {{movie.imdb}}</a></p>
+							<p><label>IMDB: </label><a href="http://www.imdb.com/title/{{movie.id}}"> {{movie.id}}</a></p>
 						</div>
 					</div>
 					<div class="col-lg-2 col-md-2 col-sm-12">
 						<div class="movie-tumbs-up">
-							<a href="#" title="Views"><i class="glyphicon glyphicon-thumbs-up"/> <strong>2000</strong></a>
+							<a href="#" title="Tumbs"><i class="glyphicon glyphicon-thumbs-up"/> <strong>0</strong></a>
 						</div>
 {{!-- 						<div class="plot">
 							<p>{{movie.plot}}</p>
