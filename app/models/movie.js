@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
 	movieId: DS.attr(),
@@ -10,7 +11,7 @@ export default DS.Model.extend({
 	fragment: DS.attr(), // piece where match was find
 
 	cuttedPlot: Ember.computed('plot', function() {
-		var plot = this.get('plot')
+		var plot = this.get('plot');
 		const maxLen = 500;
 		if (plot.length < maxLen) {
 			return plot;
@@ -27,7 +28,7 @@ export default DS.Model.extend({
     }),
 
     notNullDate: Ember.computed('date', function() {
-    	if (this.get('date') === undefined || this.get('date').length == 0) {
+    	if (this.get('date') === undefined || this.get('date').length === 0) {
     		return "-";
     	}
     	return this.get('date');

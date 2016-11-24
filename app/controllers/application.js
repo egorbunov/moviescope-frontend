@@ -9,6 +9,10 @@ export default Ember.Controller.extend({
 	showQueryErrorAlert: false,
 	queryErrorMessage: 'error',
 	actions: {
+		yearRangeChanged(yearRange) {
+			alert("filter changed");
+		},
+
 		closeQueryErrorAlert() {
 			this.transitionToRoute('');
 			this.send('resetMainPage');

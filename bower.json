@@ -5,6 +5,7 @@
     "ember-cli-shims": "0.1.1",
     "bootstrap": "~3.3.5",
     "bootstrap-sass": "^3.3.7",
-    "seiyria-bootstrap-slider": "~6.0.6"
+    "seiyria-bootstrap-slider": "~6.0.6",
+    "spin.js": "^2.3.2"
   }
 }
