@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="raw">
+    <div class="col-lg-8 col-lg-offset-2 search-input-raw">
+      <div class="text-center app-logo">
+        <label>{{ App.appLabel }}</label>
+      </div>
+      <div class="input-group">
+        {{
+          input enter="submit"
+          type="text"
+          class="form-control"
+          placeholder="Movie description to search"
+          value=searchQuery
+        }}
+        <span class="input-group-btn">
+          <button {{action "doSearch"}} class="btn btn-secondary" type="button">Search</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+{{#if filteredModel}}
+  {{#each filteredModel as |movieUnit|}}
+    {{movie-card movie=movieUnit}}
+  {{/each}}
+{{else}}
+  {{#bs-modal size="sm" open=showMessage title=messageTitle}}
+    {{message}}
+  {{/bs-modal}}
+  <div class="not-found">
+    <!--<h1>{{messageTitle}}</h1>-->
+    <h2>{{message}}</h2>
+  </div>
+{{/if}}
