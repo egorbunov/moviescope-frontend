@@ -8,28 +8,28 @@
 $brand: 'Patua One', regular;
 $plain: 'Open Sans', sans-serif;
 
-// common stuff 
+// common stuff
 
 html, body {
-	box-sizing: border-box;
-	height: 100%;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 html {
-	background: url(../images/back-1.jpg) no-repeat center center fixed;
-	// background: url(../images/back-1.jpg) no-repeat center center fixed;
-	// background: url(../images/movie-theater-dark.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  background: url(../images/back-1.jpg) no-repeat center center fixed;
+  // background: url(../images/back-1.jpg) no-repeat center center fixed;
+  // background: url(../images/movie-theater-dark.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
-	background-color: transparent;
-	div.ember-view {
-		height: 100%;
-	}
+  background-color: transparent;
+  div.ember-view {
+    height: 100%;
+  }
 }
 
 $light_blue: #70BAFF;
@@ -37,248 +37,230 @@ $darker_blue: #2979C4;
 
 // ============ Navigation bar on search result page =================
 .navbar-inverse {
-	background: #000000;
-	background-color: #E8E8E8;
-	font-family: $plain;
-	font-size: 18px;
-	padding: 0 18px;
-	border-radius: 0;
-	border-width: 0px 0px 1px 0px;
-	border-color: $darker_blue;
-	position: fixed;
-	width: 100%;
-	min-width:300px;
+  background: #000000;
+  background-color: #E8E8E8;
+  font-family: $plain;
+  font-size: 18px;
+  padding: 0 18px;
+  border-radius: 0;
+  border-width: 0px 0px 1px 0px;
+  border-color: $darker_blue;
+  position: fixed;
+  width: 100%;
+  min-width: 300px;
 
-	.navbar-brand {
-		font-family: $brand;
-		font-size: 35px;
-		color: #000;
-		text-shadow:
-	       3px 3px 0 $light_blue,
-	     -1px -1px 0 $light_blue,
-	      1px -1px 0 $light_blue,
-	      -1px 1px 0 $light_blue,
-	       1px 1px 0 $light_blue;
-		// padding-top: 18px;
-	}
-	.navbar-input-group {
-		$input_height: 2em;
-		$input_width: 30em;
-		$rad: 10px;
-		@media (min-width: $screen-sm) {
-			padding: 0 2em;
-			font-family: $plain;
-			font-size: 18px;
-			input {
-				font-size: inherit;
-				width: $input_width;
-				height: $input_height;
-				border-radius: $rad 0px 0px $rad;
-			}
-			.btn {
-				background: 0;
-				background-color: $darker_blue;
-				position: relative;
-				font-size: inherit;
-				float: right;
-				height: $input_height;
-				border-radius: 0px $rad $rad 0px; 
-				right: 0em;
-				border: 0px;
-			}
-		}
-		@media (max-width: $screen-xs-max) {
-			margin-top:0px;
-			margin-bottom:0px;
-			.btn {
-				width:100%;
-			}
-		}
-	}
-	.dropdown-menu {
-		padding-left: 30px;
-		padding-right: 30px;
-		border-radius: 10px;
+  .navbar-brand {
+    font-family: $brand;
+    font-size: 35px;
+    color: #000;
+    text-shadow: 3px 3px 0 $light_blue,
+    -1px -1px 0 $light_blue,
+    1px -1px 0 $light_blue,
+    -1px 1px 0 $light_blue,
+    1px 1px 0 $light_blue;
+    // padding-top: 18px;
+  }
+  .navbar-input-group {
+    $input_height: 2em;
+    $input_width: 30em;
+    $rad: 10px;
+    @media (min-width: $screen-sm) {
+      padding: 0 2em;
+      font-family: $plain;
+      font-size: 18px;
+      input {
+        font-size: inherit;
+        width: $input_width;
+        height: $input_height;
+        border-radius: $rad 0px 0px $rad;
+      }
+      .btn {
+        background: 0;
+        background-color: $darker_blue;
+        position: relative;
+        font-size: inherit;
+        float: right;
+        height: $input_height;
+        border-radius: 0px $rad $rad 0px;
+        right: 0em;
+        border: 0px;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  .dropdown-menu {
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
 
-		.year-group {
-			padding-bottom: 20px;
-		}
-	}
+    .year-group {
+      padding-bottom: 20px;
+    }
+  }
 }
 
 // ============= Main page ================
 
 .search-input-raw {
-	background-color: rgba(255,255,255,0.05);
-	border-radius: 10px;
-	padding: 40px;
-	margin-top: 7em;
-	margin-bottom: 7em;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 40px;
+  margin-top: 7em;
+  margin-bottom: 7em;
 
-	.app-logo {
-		font-family: $brand;
-		font-size: 3.7em;
-		color: #000;
-		// text-shadow: 2px 2px 0 $light_blue;
-	   text-shadow:
-	       3px 3px 0 $light_blue,
-	     -1px -1px 0 $light_blue,
-	      1px -1px 0 $light_blue,
-	      -1px 1px 0 $light_blue,
-	       1px 1px 0 $light_blue;
-		padding-bottom: 0.7em;
-	}
+  .app-logo {
+    font-family: $brand;
+    font-size: 3.7em;
+    color: #000;
+    // text-shadow: 2px 2px 0 $light_blue;
+    text-shadow: 3px 3px 0 $light_blue,
+    -1px -1px 0 $light_blue,
+    1px -1px 0 $light_blue,
+    -1px 1px 0 $light_blue,
+    1px 1px 0 $light_blue;
+    padding-bottom: 0.7em;
+  }
 
-	$main-font-size: 15px;
-	$rad: 10px;
-	$input_height: 2.6em;
+  $main-font-size: 15px;
+  $rad: 10px;
+  $input_height: 2.6em;
 
-	.input-group {
-		font-family: $plain;
-		font-size: $main-font-size;
+  .input-group {
+    font-family: $plain;
+    font-size: $main-font-size;
 
-		input {
-			font-size: inherit;
-	    	// border
-	    	color: #000;
-	    	height: $input_height;
-	    	border-width: 1px;
-	    	border-radius: $rad $rad $rad $rad;
-	    }
-	    .btn {
-	    	font-size: $main-font-size;
-	    	height: $input_height;
-	    	background: 0;
-	    	background-color: $darker_blue;
-	    	border-radius: 0px $rad $rad 0px; 
-	    }
-	}
+    input {
+      font-size: inherit;
+      // border
+      color: #000;
+      height: $input_height;
+      border-width: 1px;
+      border-radius: $rad $rad $rad $rad;
+    }
+    .btn {
+      font-size: $main-font-size;
+      height: $input_height;
+      background: 0;
+      background-color: $darker_blue;
+      border-radius: 0px $rad $rad 0px;
+    }
+  }
 
-	.alert {
-		font-family: $plain;
-		padding: 0.6em 0.7em 0.5em 0.5em;
-		-webkit-border-radius: 4px;
-		-moz-border-radius: 4px;
-		border-radius: $rad;
-		width: 40%;
-		margin-top: 1em;
-	}
+  .alert {
+    font-family: $plain;
+    padding: 0.6em 0.7em 0.5em 0.5em;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: $rad;
+    width: 40%;
+    margin-top: 1em;
+  }
 }
 
 // =========== query error modal ===============
 .modal-dialog {
-	font-family: $plain;
+  font-family: $plain;
 }
 
 // ==========
 
 // =========== search result ============
 .search-result-container {
-	padding-top: 5em;
+  padding-top: 5em;
+  .not-found {
+    color: #E8E8E8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
 }
-
-// .movie-card {
-// 	font-family: $plain;
-// 	// padding: 0;
-
-// 	.well {
-// 		padding-top: 1em;
-// 		padding-bottom: 1em;
-// 		background: #000000;
-// 		background-color: rgba(232, 232, 232, 0.85);
-// 		border-color: 0;
-// 		border-width: 0;
-// 	}
-
-// 	img {
-// 		height: 160px;
-// 	}
-// }
-
-
-// dsadasdddddddddddddddddddddddddddddddddddddddsdjslakdjklasjdklajdals
 
 .panel {
-    position: relative;
-    margin-left: 5em;
-    margin-right: 5em;
-    margin-bottom: 25px;
-    border-radius: 10px;
-    border: 0;
-    box-shadow: none;
-} 
-
-
-.panel-footer {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    color: #fff;
-    padding: 10px 15px;
-    background-color: #f3f5f6;
-    border-top: 1px solid #ddd;
+  position: relative;
+  margin-left: 5em;
+  margin-right: 5em;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: none;
 }
 
-.panel-default  {
-    border-color: #e4e9eb;
+.panel-footer {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: #fff;
+  padding: 10px 15px;
+  background-color: #f3f5f6;
+  border-top: 1px solid #ddd;
+}
 
-	.panel-footer {
-	    color: #768399;
-	    background-color: #e4e9eb;
-	    border-top: none;
-	}
+.panel-default {
+  border-color: #e4e9eb;
 
-	.panel-body {
-		padding: 15px;
-	    border-top: none;
-	}
+  .panel-footer {
+    color: #768399;
+    background-color: #e4e9eb;
+    border-top: none;
+  }
+
+  .panel-body {
+    padding: 15px;
+    border-top: none;
+  }
 }
 
 .white-content {
-    color: #768399;
-    background: #fff;
-    background-color: #fff;
+  color: #768399;
+  background: #fff;
+  background-color: #fff;
 }
 
-.movie-card-panel { 
-	font-family: $plain;
-	background-color: rgba(255, 255, 255, 0.7);
+.movie-card-panel {
+  font-family: $plain;
+  background-color: rgba(255, 255, 255, 0.7);
 
-	.movie-more-info {
-	    padding: 0;
-	    margin: 0;
-	    list-style: none;
-	}
+  .movie-more-info {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
 
-	.movie-tumbs-up {
-		margin-top: 10px;
-		margin-left: 30px;
+  .movie-tumbs-up {
+    margin-top: 10px;
+    margin-left: 30px;
 
-		a {
-		    font-size: 24px;
-		    // padding-bottom: 0px;
-		    margin-top: 10px;
-		    color: #79859b;
-		}
-	}
+    a {
+      font-size: 24px;
+      // padding-bottom: 0px;
+      margin-top: 10px;
+      color: #79859b;
+    }
+  }
 
-	.title {
-	    margin-top: 10px;
-	    font-size: 22px;
-	    font-weight: 600;
-	    margin-bottom: 10px;
-	}
+  .title {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 
-
-	.movie-poster {
-	    padding: 3px;
-	    border: 1px solid #e7e7e2;
-	    float: left;
-	    border-top-left-radius: 4px;
-	    border-top-right-radius: 4px;
-    	img {
-			height: 160px;
-		}
-	}
+  .movie-poster {
+    padding: 3px;
+    border: 1px solid #e7e7e2;
+    float: left;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    img {
+      height: 160px;
+    }
+  }
 }
 
 
