@@ -6,18 +6,18 @@ export default Ember.Controller.extend({
   }),
 
   searchQuery: '',
+  wasBtnClicked: false,
 
   actions: {
     submit() {
-      this.send('doSearch');
+      this.send('searchBtnClickedOnIndexPage');
     },
 
-    searchQueryChanged(newSearchQuery) {
-      this.set('searchQuery', newSearchQuery);
-    },
-
-    doSearch() {
-      this.transitionToRoute('search');
+    searchBtnClickedOnIndexPage() {
+      console.log("searchBtnClickedOnIndexPage event triggered");
+      this.set('wasBtnClicked', true);
+      this.transitionToRoute('search.do-search', { queryParams: { q: this.get('searchQuery') }});
+      // this.transitionToRoute('search');
     }
   }
 });

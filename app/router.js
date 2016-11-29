@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('search', function() {
-    this.route('go');
+    this.route('do-search');
   });
 });
 

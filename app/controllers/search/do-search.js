@@ -19,6 +19,12 @@ export default Ember.Controller.extend({
   filteredModel: function () {
     const model = this.get('model');
     const filtered = model.filter(function(elem) {
+      console.log(elem.get('year'));
+      console.log(elem.get('imdbRating'));
+      console.log(elem.get('genres'));
+      console.log(elem.get('score'));
+
+
       return true;
     });
     return filtered;

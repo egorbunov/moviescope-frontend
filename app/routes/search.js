@@ -1,11 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  showError: false,
+  searchErrorMessage: "",
+
   actions: {
     didTransition: function () {
-      const searchQ = this.controllerFor('index').get('searchQuery');
-      this.controllerFor('search').set('searchQuery', searchQ);
-      this.transitionTo('search.go', { queryParams: { q: searchQ }});
+      console.log("did transition");
+      const mainController = this.controllerFor('index');
+      if (mainController.get('wasBtnClicked') === true) {
+        const searchQ = mainController.get('searchQuery');
+        this.controllerFor('search').set('searchQuery', searchQ);
+        mainController.set('wasBtnClicked', false); // shitty mutable state
+      }
     },
 
     searchQueryChanged(newSearchQuery) {
@@ -13,7 +20,7 @@ export default Ember.Route.extend({
     },
 
     yearRangeChanged(l, r) {
-      this.controllerFor('search.go').send('yearRangeChanged', l, r);
+      this.controllerFor('search.do-search').send('yearRangeChanged', l, r);
     }
   }
 });

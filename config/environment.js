@@ -16,8 +16,12 @@ module.exports = function(environment) {
       appLabel: 'MovieScope'
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    EXTEND_PROTOTYPES: {
+    // Prevent Ember Data from overriding Date.parse.
+      Date: false
     }
-  };
+};
 
   if (environment === 'production') {
     ENV.locationType = 'hash'

@@ -1,0 +1,64 @@
+.search-input-raw {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 40px;
+  margin-top: 7em;
+  margin-bottom: 7em;
+
+  .app-logo {
+    font-family: $brand;
+    font-size: 3.7em;
+    color: #000;
+    // text-shadow: 2px 2px 0 $light_blue;
+    text-shadow: 3px 3px 0 $light_blue,
+    -1px -1px 0 $light_blue,
+    1px -1px 0 $light_blue,
+    -1px 1px 0 $light_blue,
+    1px 1px 0 $light_blue;
+    padding-bottom: 0.7em;
+  }
+
+  $main-font-size: 15px;
+  $rad: 10px;
+  $input_height: 2.6em;
+
+  .input-group {
+    font-family: $plain;
+    font-size: $main-font-size;
+
+    input {
+      resize:both;
+      font-size: inherit;
+      // border
+      color: #000;
+      height: $input_height;
+      border-width: 1px;
+      border-radius: $rad $rad $rad $rad;
+    }
+    .btn {
+      span {
+        color: #e2e2e2;
+      }
+      font-size: $main-font-size;
+      height: $input_height;
+      background: 0;
+      background-color: $darker_blue;
+      border-radius: 0px $rad $rad 0px;
+    }
+  }
+
+  .alert {
+    font-family: $plain;
+    padding: 0.6em 0.7em 0.5em 0.5em;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: $rad;
+    width: 40%;
+    margin-top: 1em;
+  }
+}
+
+// =========== query error modal ===============
+.modal-dialog {
+  font-family: $plain;
+}

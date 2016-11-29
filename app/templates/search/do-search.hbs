@@ -3,11 +3,11 @@
     {{movie-card movie=movieUnit}}
   {{/each}}
 {{else}}
-  {{#bs-modal size="sm" open=showMessage title=messageTitle}}
-    {{message}}
+  {{#bs-modal size="sm" open=showMessage title="Info"}}
+    Movies not found
   {{/bs-modal}}
   <div class="not-found">
-    <!--<h1>{{messageTitle}}</h1>-->
-    <h2>{{message}}</h2>
+    <!--<h1>Error</h1>-->
+    <h2>Movies not found</h2>
   </div>
 {{/if}}

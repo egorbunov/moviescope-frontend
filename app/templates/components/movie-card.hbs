@@ -1,35 +1,46 @@
 {{!-- <div class="container movie-card"> --}}
-	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<div class="panel panel-default plain movie-card-panel">
-				<div class="panel-body">
-					<div class="col-lg-2 col-md-2 col-sm-12">
-						<div class="movie-poster">
-							<img class="img-responsive" src="{{movie.notNullPoster}}">
-						</div>
-					</div>
-					<div class="col-lg-8 col-md-8 col-sm-12">
-						<div class="title">
-							{{movie.title}}
-						</div>
-						<div class="plot">
-							<p>{{movie.cuttedPlot}}</p>
-						</div>
-						<div class="year">
-							<p><label>Year: </label> {{movie.notNullDate}}</p>
-						</div>
-						<div class="imdb">
-							<p><label>IMDB: </label><a href="http://www.imdb.com/title/{{movie.id}}"> {{movie.id}}</a></p>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-12">
-						<div class="movie-tumbs-up">
-							<a href="#" title="Tumbs"><i class="glyphicon glyphicon-thumbs-up"/> <strong>0</strong></a>
-						</div>
-					</div>
-				</div>
-				<div class="panel-footer white-content">
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="row movie-card-row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="panel panel-default plain movie-card-panel">
+      <div class="panel-body">
+        <div class="col-lg-2 col-md-2 col-sm-12 poster-col" align="center">
+          <div class="movie-poster">
+            <img class="img-responsive" src="{{movie.notNullPoster}}">
+          </div>
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-12 movie-info">
+          <div class="title row">
+            {{movie.title}}
+          </div>
+          <div class="plot row">
+            <p>{{movie.cuttedPlot}}</p>
+          </div>
+          <div class="row movie-additional-info">
+            <div class="col-lg-2 nopadding">
+              <div class="year">
+                <p><label>Year: </label> {{movie.notNullYear}}</p>
+              </div>
+            </div>
+            <div class="col-lg-2 nopadding">
+              <div class="imdb">
+                <p>
+                  <a href="http://www.imdb.com/title/{{movie.id}}">
+                    <img class="imdb-logo" src="../images/imdb.png" alt="goto imdb" height="15">
+                    <label>
+
+                    </label>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="pull-right movie-tumbs-up">
+                <a href="#" title="Tumbs"><i class="glyphicon glyphicon-thumbs-up"/> <strong>0</strong></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

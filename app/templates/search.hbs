@@ -1,69 +1,84 @@
 {{!-- Page with results listed, search field is at the top  --}}
-<nav class="navbar navbar-inverse navbar-static-top">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed"
-            data-toggle="collapse" data-target="#menu-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    {{#link-to 'application' invokeAction='testAction'}}
-      <div class="navbar-brand">{{ App.appLabel }}</div>
-    {{/link-to}}
-    {{!-- {{ link-to  'application' class="navbar-brand" }} --}}
-  </div>
-  <div class="collapse navbar-collapse" id="menu-collapse">
-    <form class="navbar-form navbar-left navbar-input-group" role="search">
-      <div class="form-group">
-        {{
-          input
-          enter="submit"
-          type="text"
-          class="form-control"
-          placeholder="Movie description to search"
-          value=searchQuery
-        }}
-      </div>
-      <button {{action "searchBtnClicked"}} type="submit" class="btn btn-primary">Search</button>
-    </form>
-    <!-- The drop down menu -->
-    <ul class="nav navbar-nav navbar-left">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"/></a>
-        <ul class="dropdown-menu">
-          <li>
-            <div class="row">
-              <div class="col-md-12">
-                <form class="form">
-                  <div class="form-group year-group">
-                    <label>Years</label>
-                    {{range-slider mood='success'
-                                   tooltip='always'
-                                   tooltipPosition='bottom'
-                                   min=1890
-                                   max=2030
-                                   value=1890
-                                   step=1
-                                   changed='yearRangeChanged'}}
-                  </div>
-                  {{!-- 										<div class="form-group">
-                                                               <button type="submit" class="btn">apply filters</button>
-                                                          </div> --}}
-                </form>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed"
+              data-toggle="collapse" data-target="#menu-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      {{#link-to 'application' invokeAction='testAction'}}
+        <div class="navbar-brand">{{ App.appLabel }}</div>
+      {{/link-to}}
+      {{!-- {{ link-to  'application' class="navbar-brand" }} --}}
+    </div>
+    <div class="navbar-collapse collapse" id="menu-collapse">
+      <!-- about button -->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">About</a></li>
+      </ul>
+      <!-- The drop down menu -->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-filter"/></a>
+          <ul class="dropdown-menu">
+            <li>
+              <div class="row">
+                <div class="col-md-12">
+                  <form class="form">
+                    <div class="form-group year-group">
+                      <label>Years</label>
+                      {{range-slider mood='success'
+                                     tooltip='always'
+                                     tooltipPosition='bottom'
+                                     min=1890
+                                     max=2030
+                                     value=1890
+                                     step=1
+                                     changed='yearRangeChanged'}}
+                    </div>
+                  </form>
+                </div>
               </div>
-            </div>
-          </li>
-        </ul>
-      </li>
-      <li class="divider-vertical"></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">About</a></li>
-    </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="divider-vertical"></li>
+      </ul>
+      <!-- input field -->
+      <form class="navbar-form navbar-input-group">
+        <div class="form-group" style="display:inline;">
+          <div class="input-group" style="display:table;">
+            {{
+            input
+              enter="submit"
+              type="text"
+              class="form-control"
+              placeholder="Movie description to search"
+              autofocus="autofocus"
+              value=searchQuery
+            }}
+            <span class="input-group-btn" style="width:1%;">
+              <button {{action "searchBtnClicked"}} type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </nav>
 
-<div class="container search-result-container">
-  {{outlet}}
+<div class="container">
+  <div class="search-result-container">
+    {{outlet}}
+  </div>
 </div>
+
+
+{{#bs-modal size="sm" open=showError title="Error"}}
+  {{searchErrorMessage}}
+{{/bs-modal}}

@@ -1,0 +1,53 @@
+// ============ Navigation bar on search result page =================
+.navbar-inverse {
+  background: #E8E8E8;
+  font-family: $plain;
+  font-size: 18px;
+  border-radius: 0;
+  border-width: 0 0 1px 0;
+  border-color: $darker_blue;
+  .navbar-brand {
+    font-family: $brand;
+    font-size: 35px;
+    color: #000;
+    text-shadow: 3px 3px 0 $light_blue,
+    -1px -1px 0 $light_blue,
+    1px -1px 0 $light_blue,
+    -1px 1px 0 $light_blue,
+    1px 1px 0 $light_blue;
+  }
+  .navbar-input-group {
+    $rad: 10px;
+    @media (min-width: $screen-sm) {
+      font-family: $plain;
+      input {
+        font-size: inherit;
+        border-radius: $rad 0 0 $rad;
+      }
+      .btn {
+        position: relative;
+        background: $darker_blue 0 0;
+        float: right;
+        border-radius: 0 $rad $rad 0;
+        border-color: $darker_blue;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      margin-top: 0;
+      margin-bottom: 0;
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+  .dropdown-menu {
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+
+    .year-group {
+      padding-bottom: 20px;
+    }
+  }
+}
+
