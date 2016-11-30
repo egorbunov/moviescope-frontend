@@ -40,14 +40,47 @@
       }
     }
   }
-  .dropdown-menu {
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 10px;
 
-    .year-group {
-      padding-bottom: 20px;
+  .dropdown-menu {
+    height: auto;
+    max-height: 350pt;
+    //overflow:hidden;
+    overflow-x: hidden;
+    box-shadow: none;
+    background: none;
+    padding-top: 10pt;
+    padding-left: 5pt;
+    padding-right: 5pt;
+    border-radius: 10pt;
+    border: none;
+
+    .filters-group {
+      .filter-elem {
+        padding-left: 20pt;
+        padding-right: 20pt;
+        background-color: #E8E8E8;
+        margin-top: 10pt;
+        border-radius: 5pt;
+        min-width: 250pt;
+        border: none;
+        @media (min-width: $screen-md) {
+          box-shadow: 5px 5pt 30px #000000;
+        }
+      }
+
+      .year {
+        padding-bottom: 20pt;
+      }
+
+      .imdb-rating {
+        padding-bottom: 20pt;
+      }
     }
+
+
   }
 }
+
+
+
 

@@ -27,15 +27,25 @@
                   <a href="http://www.imdb.com/title/{{movie.id}}">
                     <img class="imdb-logo" src="../images/imdb.png" alt="goto imdb" height="15">
                     <label>
-
+                      {{#if movie.strRating}}
+                        {{movie.strRating}}
+                      {{else}}
+                      {{/if}}
                     </label>
                   </a>
                 </p>
               </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-2">
+              <button {{action "movieInfo" movie}}
+                title="Match info"
+                type="button" class="btn btn-link movie-info-btn">
+                <span class="glyphicon glyphicon-info-sign"></span>
+              </button>
+            </div>
+            <div class="col-lg-6">
               <div class="pull-right movie-tumbs-up">
-                <a href="#" title="Tumbs"><i class="glyphicon glyphicon-thumbs-up"/> <strong>0</strong></a>
+                <a href="#" title="Good match"><i class="glyphicon glyphicon-thumbs-up"/> <strong>0</strong></a>
               </div>
             </div>
           </div>
@@ -44,3 +54,5 @@
     </div>
   </div>
 </div>
+
+

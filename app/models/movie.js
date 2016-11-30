@@ -7,12 +7,13 @@ export default DS.Model.extend({
   plot: DS.attr('string'), // tiny plot
   releaseDate: DS.attr('string'),
   poster: DS.attr('string'),
+  year: DS.attr('number'),
+  imdbRating: DS.attr('number'),
+  score: DS.attr('number'),
   genres: DS.attr(),
-  imdbRating: DS.attr(),
-  score: DS.attr(),
-  year: DS.attr('string'),
   fromReviews: DS.attr('boolean'),
   fragment: DS.attr('string'), // piece where match was find
+
 
   cuttedPlot: Ember.computed('plot', function () {
     var plot = this.get('plot');
@@ -44,4 +45,12 @@ export default DS.Model.extend({
     }
     return this.get('year');
   }),
+
+  strRating: Ember.computed('imdbRating', function() {
+    if (this.get('imdbRating') === undefined) {
+      return "";
+    } else {
+      return this.get('imdbRating').toFixed(1).toString();
+    }
+  })
 });

@@ -8,9 +8,7 @@ export default Ember.Controller.extend({
   messageTitle: '',
   showMessage: false,
 
-  // filter parameters
-  yearFrom: 0,
-  yearTo:5000,
+  filterParams: null,
 
   App: Ember.computed(function() {
     return Ember.getOwner(this).application;
@@ -18,16 +16,20 @@ export default Ember.Controller.extend({
 
   filteredModel: function () {
     const model = this.get('model');
-    const filtered = model.filter(function(elem) {
-      console.log(elem.get('year'));
-      console.log(elem.get('imdbRating'));
-      console.log(elem.get('genres'));
-      console.log(elem.get('score'));
-
-
-      return true;
-    });
-    return filtered;
+    const fp = this.get('filterParams');
+    if (fp != null) {
+      return model.filter(function(elem) {
+        const y = elem.get('year');
+        const r = elem.get('imdbRating');
+        console.log(r);
+        return (
+          (y === undefined || (y >= fp['yearFrom'] && y <= fp['yearTo'])) &&
+          (r === undefined || (r >= fp['ratingFrom'] && r <= fp['ratingTo']))
+         );
+      });
+    } else {
+      return model;
+    }
   }.property('model', 'filtered'),
 
   actions: {
@@ -41,14 +43,6 @@ export default Ember.Controller.extend({
       this.set('messageTitle', 'Error');
       this.set('message', msg);
       this.set('showMessage', true);
-    },
-
-    // filters
-
-    yearRangeChanged(l, r) {
-      this.set('yearFrom', l);
-      this.set('yearTo', r);
-      this.get('target.router').refresh();
     }
   }
 });

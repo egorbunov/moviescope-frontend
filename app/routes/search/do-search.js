@@ -6,13 +6,26 @@ export default Ember.Route.extend({
     // search query string
     q: {
       refreshModel: true
-    }
+    },
+    yearFrom: {
+      refreshModel: true
+    },
+    yearTo: {
+      refreshModel: true
+    },
+    ratingFrom: {
+      refreshModel: true
+    },
+    ratingTo: {
+      refreshModel: true
+    },
   },
 
   beforeModel(transition) {
+    const ps = transition.queryParams;
     const searchController = this.controllerFor('search');
     const mainController = this.controllerFor('index');
-    const searchQ = transition.queryParams.q;
+    const searchQ = ps.q;
 
     searchController.set('searchQuery', searchQ);
     mainController.set('searchQuery', searchQ);
@@ -25,6 +38,27 @@ export default Ember.Route.extend({
     } else {
       this.controllerFor('search').set('showError', false);
     }
+
+    if (ps.yearFrom === undefined || isNaN(parseInt(ps.yearFrom))) {
+      ps.yearFrom = 0;
+    }
+    if (ps.yearTo === undefined || isNaN(parseInt(ps.yearTo))) {
+      ps.yearTo = 5000;
+    }
+    if (ps.ratingTo === undefined || isNaN(parseFloat(ps.ratingTo))) {
+      ps.ratingTo = 10;
+    }
+    if (ps.ratingFrom === undefined || isNaN(parseFloat(ps.ratingFrom))) {
+      ps.ratingFrom = 0;
+    }
+
+    const curController = this.controllerFor('search.do-search');
+    curController.set('filterParams', {
+      'yearFrom': parseInt(ps.yearFrom),
+      'yearTo': parseInt(ps.yearTo),
+      'ratingFrom': parseFloat(ps.ratingFrom),
+      'ratingTo': parseFloat(ps.ratingTo)
+    });
   },
 
   model(params) {

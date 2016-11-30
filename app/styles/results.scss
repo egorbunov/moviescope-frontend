@@ -3,6 +3,9 @@
 .search-result-container {
   padding-top: 5em;
   .not-found {
+    display: table;
+    display: table-cell;
+    vertical-align: middle;
     color: #E8E8E8;
     position: absolute;
     top: 50%;
@@ -58,11 +61,23 @@
     }
   }
 
+  .movie-info-btn {
+      padding: 0;
+      text-align: right;
+      font-size: 14pt;
+      // padding-bottom: 0px;
+      color: #79859b;
+  }
+
   .title {
     margin-top: 0;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 10px;
+    @media (max-width: $screen-sm) {
+      padding-top: 5pt;
+      text-align: center;
+    }
   }
 
   .plot {
@@ -96,4 +111,9 @@
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.fill {
+  min-height: 100%;
+  height: 100%;
 }

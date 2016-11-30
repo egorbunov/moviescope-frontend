@@ -41,9 +41,8 @@
       }
       font-size: $main-font-size;
       height: $input_height;
-      background: 0;
-      background-color: $darker_blue;
-      border-radius: 0px $rad $rad 0px;
+      background: $darker_blue 0 0;
+      border-radius: 0 $rad $rad 0;
     }
   }
 
