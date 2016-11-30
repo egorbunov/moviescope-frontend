@@ -45,9 +45,11 @@
               </button>
             </div>
             <div class="col-lg-6">
-              <div class="pull-right movie-tumbs-up">
-                <a href="#" title="Good match"><i class="glyphicon glyphicon-thumbs-up"/> <strong>0</strong></a>
-              </div>
+              <button {{action "goodMatch" movie}}
+                title="Good match!"
+                type="button" class="btn btn-link pull-right movie-tumbs-up">
+                <span class="glyphicon glyphicon-thumbs-up"></span>
+              </button>
             </div>
           </div>
         </div>
