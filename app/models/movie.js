@@ -13,6 +13,7 @@ export default DS.Model.extend({
   genres: DS.attr(),
   fromReviews: DS.attr('boolean'),
   fragment: DS.attr('string'), // piece where match was find
+  voteCnt: DS.attr('number'),
 
 
   cuttedPlot: Ember.computed('plot', function () {
