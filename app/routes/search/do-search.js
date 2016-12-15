@@ -7,10 +7,10 @@ export default Ember.Route.extend({
     q: {
       refreshModel: true
     },
-    yearFrom: {
+    y1: {
       refreshModel: true
     },
-    yearTo: {
+    y2: {
       refreshModel: true
     },
     ratingFrom: {
@@ -39,11 +39,11 @@ export default Ember.Route.extend({
       this.controllerFor('search').set('showError', false);
     }
 
-    if (ps.yearFrom === undefined || isNaN(parseInt(ps.yearFrom))) {
-      ps.yearFrom = 0;
+    if (ps.y1 === undefined || isNaN(parseInt(ps.y1))) {
+      ps.y1 = 0;
     }
-    if (ps.yearTo === undefined || isNaN(parseInt(ps.yearTo))) {
-      ps.yearTo = 5000;
+    if (ps.y2 === undefined || isNaN(parseInt(ps.y2))) {
+      ps.y2 = 5000;
     }
     if (ps.ratingTo === undefined || isNaN(parseFloat(ps.ratingTo))) {
       ps.ratingTo = 10;
@@ -54,8 +54,8 @@ export default Ember.Route.extend({
 
     const curController = this.controllerFor('search.do-search');
     curController.set('filterParams', {
-      'yearFrom': parseInt(ps.yearFrom),
-      'yearTo': parseInt(ps.yearTo),
+      'yearFrom': parseInt(ps.y1),
+      'yearTo': parseInt(ps.y2),
       'ratingFrom': parseFloat(ps.ratingFrom),
       'ratingTo': parseFloat(ps.ratingTo)
     });

@@ -70,8 +70,8 @@ export default Ember.Controller.extend({
           queryParams:
           {
             q: this.get('searchQuery'),
-            yearFrom: this.get('yearFrom'),
-            yearTo: this.get('yearTo'),
+            y1: this.get('yearFrom'),
+            y2: this.get('yearTo'),
             ratingFrom: this.get('imdbRatingFrom'),
             ratingTo: this.get('imdbRatingTo')
           }
