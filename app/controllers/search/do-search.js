@@ -7,6 +7,8 @@ export default Ember.Controller.extend({
   message: '',
   messageTitle: '',
   showMessage: false,
+  spelledQ: null,
+  typosColorQ: null,
 
   filterParams: null,
 

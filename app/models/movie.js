@@ -15,6 +15,12 @@ export default DS.Model.extend({
   fragment: DS.attr('string'), // piece where match was find
   voteCnt: DS.attr('number'),
 
+  nFragment: Ember.computed('fragment', function () {
+    var fr = this.get('fragment');
+    fr = fr.replace(/(?:\r\n|\r|\n)/g, '<br />');
+    return fr;
+  }),
+
 
   cuttedPlot: Ember.computed('plot', function () {
     var plot = this.get('plot');

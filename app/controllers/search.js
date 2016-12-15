@@ -55,6 +55,7 @@ export default Ember.Controller.extend({
   imdbRatingTo: 10,
 
   searchQuery: '',
+  spelledQ: null,
   actions: {
     searchBtnClicked() {
       this.send('doSearch');
@@ -64,7 +65,7 @@ export default Ember.Controller.extend({
      * Similar to index controller, but here we already in search route
      */
     doSearch() {
-      console.log("do search event triggered, search");
+      console.log("do search event triggered, search " + this.get('searchQuery'));
       this.transitionToRoute('search.do-search',
         {
           queryParams:
@@ -76,6 +77,11 @@ export default Ember.Controller.extend({
             ratingTo: this.get('imdbRatingTo')
           }
         });
+    },
+
+    doSpelledSearch() {
+      this.set('searchQuery', this.get('spelledQ'));
+      this.send('doSearch');
     },
 
     // filters

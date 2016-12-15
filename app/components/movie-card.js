@@ -8,7 +8,8 @@ export default Ember.Component.extend({
       const fragmentInfo = modal.find("#fragment-info");
       const body = modal.find("#movie-info-text");
       title.html("Match info for: <b>" + movie.get('title') + "</b>");
-      body.html(movie.get("fragment"));
+      console.log(movie.get("nFragment"));
+      body.html(movie.get("nFragment"));
       if (movie.get("fromReviews") === false) {
         fragmentInfo.html("<i>Fragment from plot</i>");
       } else {
